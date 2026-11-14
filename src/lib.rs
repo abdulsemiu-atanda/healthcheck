@@ -20,7 +20,8 @@
 //!
 //! - [`Check`] is one dependency probe. The built-in checks live in [`checks`]:
 //!   Faktory always, Postgres behind the `database` feature, Redis and worker
-//!   heartbeats behind `keystore`.
+//!   heartbeats behind `keystore`, and a plain HTTP probe behind `http`, with
+//!   which a public service reports on private ones it can reach.
 //! - [`Health`] holds a service's checks, cache and rate limiter. A service builds
 //!   one at startup, registers it as `web::Data<Health>`, and mounts [`details`]
 //!   at `healthcheck/details` in its own routes.
