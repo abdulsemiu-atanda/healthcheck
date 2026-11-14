@@ -43,6 +43,8 @@ healthcheck = { git = "https://github.com/abdulsemiu-atanda/healthcheck.git", re
 Features:
 
 - `database`: the Postgres check (`checks::Database`), built on a diesel `r2d2` pool.
+- `http`: a `GET` probe of another service (`checks::Http`), passing on a 2xx. It lets a public service report on
+  private ones only it can reach. The client has no TLS, so it is for plain http hosts on the private network.
 - `keystore`: the Redis check (`checks::Redis`), the worker heartbeat check (`checks::Worker`) and the heartbeat writer
   (`heartbeat::beat`).
 

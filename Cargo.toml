@@ -20,6 +20,7 @@ diesel = { version = "2.3.7", optional = true, features = ["postgres", "r2d2"] }
 futures-util = { version = "0.3.32", default-features = false, features = ["std"] }
 log = "0.4"
 redis = { version = "1.2.3", optional = true }
+reqwest = { version = "0.13", optional = true, default-features = false }
 serde = { version = "1", features = ["derive"] }
 tokio = { version = "1.52", features = ["io-util", "net", "rt", "sync", "time"] }
 
@@ -31,4 +32,5 @@ tokio = { version = "1.52", features = ["io-util", "macros", "net", "rt-multi-th
 [features]
 default = []
 database = ["diesel"]
+http = ["reqwest"]
 keystore = ["redis"]
